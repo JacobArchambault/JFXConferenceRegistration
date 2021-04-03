@@ -19,12 +19,24 @@ public class App extends Application {
 
 	RadioButton rb1 = new RadioButton("General registration, $895");
 	RadioButton rb2 = new RadioButton("Student Registration, $495");
+	Label outputLabel = new Label("$0.00");
 
 	Registration registration = new Registration(rb1, rb2);
 
 	@Override
 	public void start(final Stage stage) {
-		stage.setScene(new Scene(new VBox(new Label("Registration type: "), rb1, rb2, new Button("Calculate total"))));
+		stage
+				.setScene(
+						new Scene(
+								new VBox(
+										new Label("Registration type: "),
+										rb1,
+										rb2,
+										new Label("Total: "),
+										outputLabel,
+										new EventButton(
+												"Calculate total",
+												e -> outputLabel.setText(String.valueOf(registration.cost()))))));
 		stage.show();
 	}
 
