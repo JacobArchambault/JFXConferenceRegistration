@@ -2,6 +2,7 @@ package org.jacobarchambault.conferenceregistration;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -28,7 +29,7 @@ public class App extends Application {
 	@Override
 	public void start(Stage stage) {
 		groupButtons();
-		stage.setScene(new Scene(new VBox(new Label("Registration type: "), rb1, rb2)));
+		stage.setScene(new Scene(new VBox(new Label("Registration type: "), rb1, rb2, new Button("Calculate total"))));
 		stage.show();
 	}
 
