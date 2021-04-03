@@ -5,9 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -16,25 +13,19 @@ import javafx.stage.Stage;
  */
 public class App extends Application {
 
-	final ToggleGroup group = new ToggleGroup();
+	public static void main(final String[] args) {
+		Application.launch();
+	}
+
 	RadioButton rb1 = new RadioButton("General registration, $895");
 	RadioButton rb2 = new RadioButton("Student Registration, $495");
 
-	void groupButtons() {
-		rb1.setToggleGroup(group);
-		rb2.setToggleGroup(group);
-		rb1.setSelected(true);
-	}
+	Registration registration = new Registration(rb1, rb2);
 
 	@Override
-	public void start(Stage stage) {
-		groupButtons();
+	public void start(final Stage stage) {
 		stage.setScene(new Scene(new VBox(new Label("Registration type: "), rb1, rb2, new Button("Calculate total"))));
 		stage.show();
-	}
-
-	public static void main(String[] args) {
-		launch();
 	}
 
 }
