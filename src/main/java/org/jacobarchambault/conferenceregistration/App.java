@@ -14,16 +14,20 @@ import javafx.stage.Stage;
  */
 public class App extends Application {
 
+	final ToggleGroup group = new ToggleGroup();
+	RadioButton rb1 = new RadioButton("General registration, $895");
+	RadioButton rb2 = new RadioButton("Student Registration, $495");
+
+	void groupButtons() {
+		rb1.setToggleGroup(group);
+		rb2.setToggleGroup(group);
+		rb1.setSelected(true);
+	}
+
 	@Override
 	public void start(Stage stage) {
-
-		stage
-				.setScene(
-						new Scene(
-								new HBox(
-										new Label("Registration type: "),
-										new RadioButton("General registration, $895"),
-										new RadioButton("Student Registration, $495"))));
+		groupButtons();
+		stage.setScene(new Scene(new HBox(new Label("Registration type: "), rb1, rb2)));
 		stage.show();
 	}
 
