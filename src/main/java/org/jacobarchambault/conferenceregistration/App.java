@@ -3,6 +3,7 @@ package org.jacobarchambault.conferenceregistration;
 import java.text.NumberFormat;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -39,8 +40,9 @@ public class App extends Application {
 		stage
 				.setScene(
 						new Scene(
-								new VBox(
+								new CenteredVBox(
 										10,
+										new Insets(10),
 										new VBox(10, new Label("Registration type: "), rb1, rb2),
 										new HBox(10, dinnerCheckBox, new Label("Include opening night dinner, $30")),
 										new Label("Select any of the following preconference workshops to attend: "),
