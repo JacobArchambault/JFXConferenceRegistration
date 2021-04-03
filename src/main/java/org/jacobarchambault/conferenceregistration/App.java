@@ -7,6 +7,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -27,7 +28,7 @@ public class App extends Application {
 	@Override
 	public void start(Stage stage) {
 		groupButtons();
-		stage.setScene(new Scene(new HBox(new Label("Registration type: "), rb1, rb2)));
+		stage.setScene(new Scene(new VBox(new Label("Registration type: "), rb1, rb2)));
 		stage.show();
 	}
 
