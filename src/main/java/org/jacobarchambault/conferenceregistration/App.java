@@ -37,6 +37,7 @@ public class App extends Application {
 										10,
 										new VBox(10, new Label("Registration type: "), rb1, rb2),
 										new HBox(10, dinnerCheckBox, new Label("Include opening night dinner, $30")),
+										new HBox(10, new Label("Select any of the following preconference workshops: ")),
 										new Label("Total: "),
 										outputLabel,
 										new EventButton(
