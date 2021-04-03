@@ -3,7 +3,7 @@ package org.jacobarchambault.conferenceregistration;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
-public class Registration {
+public class Registration implements PricedSelection {
 
 	RadioButton general;
 	RadioButton student;
@@ -17,7 +17,7 @@ public class Registration {
 		general.setSelected(true);
 	}
 
-	int cost() {
+	public int include() {
 		return general.isSelected() ? 895 : 495;
 	}
 }
